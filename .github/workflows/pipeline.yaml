@@ -4,6 +4,9 @@ on:
   push:
     branches: [ master ]
 
+permissions:
+  id-toke:  write
+  content:  read
 
 jobs:
   build:
