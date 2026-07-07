@@ -2,27 +2,24 @@ name: CI PIPELINE
 
 on:
   push:
-    branches: [ master ]
-
-permissions:
-  id-toke:  write
-  content:  read
+    branches:
+      - master
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
-  steps:
-    - name: Checkout_code
-      uses: actions/checkout@v4
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    - name: Set_up_Node_js
-      uses: actions/setup-node@v3
-      with:
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
           node-version: 16
-      
-    - name: Install dependencies
-      run:  npm install
 
-    - name: run_test
-      run: npm test
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test
