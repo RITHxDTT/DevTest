@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
   steps:
-    - name: checkout_code
-      uses: action/checkout@v3
+    - name: Checkout_code
+      uses: actions/checkout@v3
 
     - name: Set_up_Node_js
       uses: actions/setup-node@v3
